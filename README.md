@@ -1,0 +1,1 @@
+Safe version of Telegram bot for Railway without emojis or Unicode characters.
