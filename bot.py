@@ -54,8 +54,8 @@ async def list_sources(client, cb: CallbackQuery):
     with open(CFG, "r") as f:
         cfg = json.load(f)
     sources = cfg.get("default_sources", [])
-    text = "📡 کانال‌های منبع:
-" + "
+    text = "📡 کانال‌های منبع:\n" + "\n".join([f"🔹 {ch}" for ch in sources])
+
 ".join([f"🔹 {ch}" for ch in sources]) if sources else "📭 لیست کانال‌ها خالیه."
     await cb.message.edit_text(text, reply_markup=back_menu("sources"))
 
