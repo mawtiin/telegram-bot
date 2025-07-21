@@ -53,7 +53,7 @@ async def list_sources(client, cb: CallbackQuery):
     sources = cfg.get("default_sources", [])
     text = "Source Channels:\n" + "\\n".join([f"- {ch}" for ch in sources]) if sources else "No channels in list."
 
-text = "Source Channels:\n" + ("\n".join([f"- {ch}" for ch in sources]) if sources else "No channels in list.")
+    text = "Source Channels:\n" + ("\n".join([f"- {ch}" for ch in sources]) if sources else "No channels in list.")
     await cb.message.edit_text(text, reply_markup=back_menu("sources"))
 
 @app.on_callback_query(filters.regex("add_source"))
